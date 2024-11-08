@@ -10,7 +10,12 @@ public enum WeaponType {Sword, Bow, Staff}
 public class Weapon : Item
 {
     public WeaponType weaponType; // the type of the weapon
-    public bool useWeaponDurability; // if this weapon is "limited" in use or not
-    public int weaponDurability; // if useWeaponDurability set true, from 1 to 10 hits, otherwise ignored
     public int weaponDamage; //the weapon's amount of damage per hit
+    
+    public bool useWeaponDurability; // if this weapon is "limited" in use or not
+    public int weaponDurability; // if useWeaponDurability set true, the amount of hits
+
+    // to check if durability amount should appear
+    public bool IsDurable() => useWeaponDurability == true;
+
 }

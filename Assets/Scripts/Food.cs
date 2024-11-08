@@ -8,6 +8,7 @@ using UnityEngine;
 
 public enum FoodType { Simple, Complex, Poison}
 public enum BuffType {None, Health, Mana}
+public enum DebuffType {None, Health, Mana}
 
 [CreateAssetMenu(fileName = "NewFood", menuName = "Inventory/Item/Consumable/Food", order = 1)]
 
@@ -17,4 +18,12 @@ public class Food : Item
     public int fullAmount; //how much will the food cover the player's hunger
     public BuffType buffType; //the type of buff the food gives 
     public int buffAmount; //the amount of buff it gives
+    public DebuffType debuffType; //the type of debuff the food gives 
+    public int debuffAmount; //the amount of debuff it gives
+
+    // to check if buffs should appear
+    public bool IsComplexFood() => foodType == FoodType.Complex;
+
+    // to check if debuffs should appear
+    public bool IsPoisonFood() => foodType == FoodType.Poison;
 }

@@ -13,5 +13,8 @@ public class Armor : Item
     public ArmorType armorType; // the type of armor
     public int shieldAmount; // the amount it adds to the player's shield/protection
     public bool useArmorDurability; // whether it is "limited" in use or not
-    public int armorDurability; // if is used durability, from 1 to 10 hits
+    public int armorDurability; // if is used durability, the amount of hits
+
+    // to check if durability amount should appear
+    public bool IsDurable() => useArmorDurability == true;
 }
