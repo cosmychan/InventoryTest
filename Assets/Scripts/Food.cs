@@ -4,6 +4,7 @@ using UnityEngine;
 // Simple (like an apple or a carrot for example) or Complex (for anything that was made via cooking, for example soup
 // Poison is for the food that may be consumed to cover hunger, but will give a decrease in other stats (in this case a negave valut int the buff amount field)
 // the Buff type defines whether the food can give a buff (in health or mana for example) or not; and the buff amount
+// this class can be extended in any way needed further, this is just a basic example
 // this class add to the initial Item class data/info
 
 public enum FoodType { Simple, Complex, Poison}
