@@ -12,7 +12,7 @@ public class ArmorEditor : Editor
         // to show the basic item info
         EditorGUILayout.LabelField("Item Data", EditorStyles.boldLabel);
         armor.itemName = EditorGUILayout.TextField(armor.itemName);
-        armor.itemImage = (Sprite)EditorGUILayout.ObjectField(armor.itemImage, typeof(Sprite),
+        armor.itemPrefac = (GameObject)EditorGUILayout.ObjectField(armor.itemPrefac, typeof(GameObject),
             false, GUILayout.Height(EditorGUIUtility.singleLineHeight));
         armor.itemDescription = EditorGUILayout.TextArea(armor.itemDescription);
 

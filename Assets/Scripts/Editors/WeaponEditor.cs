@@ -12,7 +12,7 @@ public class WeaponEditor : Editor
         // to show the basic item info
         EditorGUILayout.LabelField("Item Data", EditorStyles.boldLabel);
         weapon.itemName = EditorGUILayout.TextField(weapon.itemName);
-        weapon.itemImage = (Sprite)EditorGUILayout.ObjectField(weapon.itemImage, typeof(Sprite),
+        weapon.itemPrefac = (GameObject)EditorGUILayout.ObjectField(weapon.itemPrefac, typeof(GameObject),
             false, GUILayout.Height(EditorGUIUtility.singleLineHeight));
         weapon.itemDescription = EditorGUILayout.TextArea(weapon.itemDescription);
 

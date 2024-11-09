@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c9dc8b23219d94e8f35ba1ec7acc85, type: 3}
-  m_Name: Key
+  m_Script: {fileID: 11500000, guid: e395f985bc20d214993974c55f9af04b, type: 3}
+  m_Name: PlayerInventory
   m_EditorClassIdentifier: 
-  itemName: Key
-  itemPrefac: {fileID: 2773060694191407776, guid: d799340050650994da7f065f6cbc363b,
-    type: 3}
-  itemDescription: Used to open things.
+  inventoryItems: []

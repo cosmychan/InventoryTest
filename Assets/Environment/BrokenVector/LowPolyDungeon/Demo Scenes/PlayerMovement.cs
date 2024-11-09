@@ -6,44 +6,50 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
     public float baseSpeed = 12f;
-    public float gravity = -9.81f;
-    public float jumpHeight = 3f;
-    public float sprintSpeed = 5f;
+    private Animator _anim;
 
-    float speedBoost = 1f;
-    Vector3 velocity;
+
     void Start()
     {
-
+        //get the animator
+        _anim = GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (controller.isGrounded && velocity.y < 0)
+        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0) //input from player
         {
-            velocity.y = -2f;
-        }
+            float x = Input.GetAxis("Horizontal");
+            float y = Input.GetAxis("Vertical");
 
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+            Vector3 move = transform.right * x + transform.forward * y; //get the direction of movement
+            //GetAnimationToPlay(move);
+            controller.Move(move * baseSpeed * Time.deltaTime); //move player with the speed value
 
-        if (Input.GetButton("Fire3"))
-            speedBoost = sprintSpeed;
-        else
-            speedBoost = 1f;
+            //check the direction of movement for the animator
+            if (Input.GetAxis("Vertical") > 0) 
+            {
+                _anim.SetBool("Run", true);
+                _anim.SetBool("Idle", false);
+                _anim.SetBool("RunBack", false);
+            } else if (Input.GetAxis("Vertical") < 0)
+            {
+                _anim.SetBool("Run", false);
+                _anim.SetBool("Idle", false);
+                _anim.SetBool("RunBack", true);
+            }
 
-
-        Vector3 move = transform.right * x + transform.forward * z;
-
-        controller.Move(move * (baseSpeed + speedBoost) * Time.deltaTime);
-
-        if (Input.GetButtonDown("Jump") && controller.isGrounded)
+            
+            //rotate player towards right or left
+            Quaternion toRotation = Quaternion.LookRotation(move, Vector3.up);
+            transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.deltaTime);
+            
+        } else
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            //stop movement animations and start Idle when no input
+            _anim.SetBool("Idle", true);
+            _anim.SetBool("Run", false);
+            _anim.SetBool("RunBack", false);
         }
-
-        velocity.y += gravity * Time.deltaTime;
-
-        controller.Move(velocity * Time.deltaTime);
     }
 }

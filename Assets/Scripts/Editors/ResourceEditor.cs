@@ -12,7 +12,7 @@ public class ResourceEditor : Editor
         // to show the basic item info
         EditorGUILayout.LabelField("Item Data", EditorStyles.boldLabel);
         resource.itemName = EditorGUILayout.TextField(resource.itemName);
-        resource.itemImage = (Sprite)EditorGUILayout.ObjectField(resource.itemImage, typeof(Sprite),
+        resource.itemPrefac = (GameObject)EditorGUILayout.ObjectField(resource.itemPrefac, typeof(GameObject),
             false, GUILayout.Height(EditorGUIUtility.singleLineHeight));
         resource.itemDescription = EditorGUILayout.TextArea(resource.itemDescription);
 

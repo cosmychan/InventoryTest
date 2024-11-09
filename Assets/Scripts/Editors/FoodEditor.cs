@@ -12,7 +12,7 @@ public class FoodEditor : Editor
         // to show the basic item info
         EditorGUILayout.LabelField("Item Data", EditorStyles.boldLabel);
         food.itemName = EditorGUILayout.TextField(food.itemName);
-        food.itemImage = (Sprite)EditorGUILayout.ObjectField(food.itemImage, typeof(Sprite),
+        food.itemPrefac = (GameObject)EditorGUILayout.ObjectField(food.itemPrefac, typeof(GameObject),
             false, GUILayout.Height(EditorGUIUtility.singleLineHeight));
         food.itemDescription = EditorGUILayout.TextArea(food.itemDescription);
 
