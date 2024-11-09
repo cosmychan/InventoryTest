@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Big Health Potion
   m_EditorClassIdentifier: 
   itemName: Big Health Potion
+  itemPrefac: {fileID: 0}
   itemImage: {fileID: 0}
+  isStackable: 1
   itemDescription: A potion that restores the maximum amount of health.
   potionType: 0
   restoreAmount: 100

@@ -14,6 +14,9 @@ public class FoodEditor : Editor
         food.itemName = EditorGUILayout.TextField(food.itemName);
         food.itemPrefac = (GameObject)EditorGUILayout.ObjectField(food.itemPrefac, typeof(GameObject),
             false, GUILayout.Height(EditorGUIUtility.singleLineHeight));
+        food.itemImage = (Sprite)EditorGUILayout.ObjectField(food.itemImage, typeof(Sprite),
+           false, GUILayout.Height(EditorGUIUtility.singleLineHeight));
+        food.isStackable = EditorGUILayout.Toggle("Is Stackable", food.isStackable);
         food.itemDescription = EditorGUILayout.TextArea(food.itemDescription);
 
 

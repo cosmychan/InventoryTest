@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Money
   m_EditorClassIdentifier: 
   itemName: Coins
-  itemImage: {fileID: 21300000, guid: 9ce84ff0fdeb13d4a83f077d075dd9a5, type: 3}
+  itemPrefac: {fileID: 0}
+  itemImage: {fileID: 0}
+  isStackable: 1
   itemDescription: Money. Used to buy things.

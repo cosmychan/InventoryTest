@@ -15,7 +15,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     public ItemType itemType; //check if is NonConsumable (for weapon and armor slots)
     public ArmorType armorType; //check armor type for specific armor slots
     //check item type for armor and weapon
-
+    //check equipped and add stats
     private GameObject _dropped;
 
     public void OnDrop(PointerEventData eventData)
@@ -36,6 +36,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
             }
             else
             {
+                _dropped = eventData.pointerDrag; //get the dropped object
                 CheckItemType();
             }
             
@@ -46,6 +47,9 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     {
         if (itemType == ItemType.NonConsumable)
         {
+            //_dropped = eventData.pointerDrag; //get the dropped object
+            DragableItem dragable = _dropped.GetComponent<DragableItem>(); //get the dragable script from the object
+
             if (notArmor)
             {
                 //get data from draggable item to check if the items corresponds to the slot

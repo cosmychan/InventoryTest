@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Potato
   m_EditorClassIdentifier: 
   itemName: Potato
+  itemPrefac: {fileID: 0}
   itemImage: {fileID: 0}
+  isStackable: 1
   itemDescription: A small potato. Used for cooking. If eaten cover hunger by 5.
   foodType: 0
   fullAmount: 5

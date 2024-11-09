@@ -14,6 +14,9 @@ public class WeaponEditor : Editor
         weapon.itemName = EditorGUILayout.TextField(weapon.itemName);
         weapon.itemPrefac = (GameObject)EditorGUILayout.ObjectField(weapon.itemPrefac, typeof(GameObject),
             false, GUILayout.Height(EditorGUIUtility.singleLineHeight));
+        weapon.itemImage = (Sprite)EditorGUILayout.ObjectField(weapon.itemImage, typeof(Sprite),
+           false, GUILayout.Height(EditorGUIUtility.singleLineHeight));
+        weapon.isStackable = EditorGUILayout.Toggle("Is Stackable", weapon.isStackable);
         weapon.itemDescription = EditorGUILayout.TextArea(weapon.itemDescription);
 
 

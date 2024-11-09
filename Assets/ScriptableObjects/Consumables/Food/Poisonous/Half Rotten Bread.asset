@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Half Rotten Bread
   m_EditorClassIdentifier: 
   itemName: Half Rotten Bread
+  itemPrefac: {fileID: 0}
   itemImage: {fileID: 0}
+  isStackable: 1
   itemDescription: Half of a loaf of bread. Half rotten. Covers hunger by 15, reduces
     health by 20.
   foodType: 2

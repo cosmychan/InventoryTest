@@ -14,6 +14,9 @@ public class ResourceEditor : Editor
         resource.itemName = EditorGUILayout.TextField(resource.itemName);
         resource.itemPrefac = (GameObject)EditorGUILayout.ObjectField(resource.itemPrefac, typeof(GameObject),
             false, GUILayout.Height(EditorGUIUtility.singleLineHeight));
+        resource.itemImage = (Sprite)EditorGUILayout.ObjectField(resource.itemImage, typeof(Sprite),
+           false, GUILayout.Height(EditorGUIUtility.singleLineHeight));
+        resource.isStackable = EditorGUILayout.Toggle("Is Stackable", resource.isStackable);
         resource.itemDescription = EditorGUILayout.TextArea(resource.itemDescription);
 
 

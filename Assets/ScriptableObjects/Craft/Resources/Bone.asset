@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Bone
   m_EditorClassIdentifier: 
   itemName: Bone
+  itemPrefac: {fileID: 0}
   itemImage: {fileID: 0}
+  isStackable: 1
   itemDescription: Bones. Usefull resource for crafting
   resourceType: 2
   plantType: 0

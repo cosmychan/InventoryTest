@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Ivy
   m_EditorClassIdentifier: 
   itemName: Ivy (plant)
+  itemPrefac: {fileID: 0}
   itemImage: {fileID: 0}
+  isStackable: 1
   itemDescription: A plant used for crafting.
   resourceType: 3
   plantType: 0

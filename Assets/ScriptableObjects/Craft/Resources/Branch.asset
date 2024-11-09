@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Branch
   m_EditorClassIdentifier: 
   itemName: Branch
+  itemPrefac: {fileID: 0}
   itemImage: {fileID: 0}
+  isStackable: 1
   itemDescription: Used for crafting.
   resourceType: 3
   plantType: 1

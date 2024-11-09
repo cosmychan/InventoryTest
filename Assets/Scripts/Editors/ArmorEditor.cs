@@ -14,6 +14,9 @@ public class ArmorEditor : Editor
         armor.itemName = EditorGUILayout.TextField(armor.itemName);
         armor.itemPrefac = (GameObject)EditorGUILayout.ObjectField(armor.itemPrefac, typeof(GameObject),
             false, GUILayout.Height(EditorGUIUtility.singleLineHeight));
+        armor.itemImage = (Sprite)EditorGUILayout.ObjectField(armor.itemImage, typeof(Sprite),
+            false, GUILayout.Height(EditorGUIUtility.singleLineHeight));
+        armor.isStackable = EditorGUILayout.Toggle("Is Stackable", armor.isStackable);
         armor.itemDescription = EditorGUILayout.TextArea(armor.itemDescription);
 
 

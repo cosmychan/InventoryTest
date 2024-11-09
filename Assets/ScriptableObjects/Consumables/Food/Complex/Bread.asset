@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Bread
   m_EditorClassIdentifier: 
   itemName: Bread
+  itemPrefac: {fileID: 0}
   itemImage: {fileID: 0}
+  isStackable: 1
   itemDescription: A loaf of bread. Covers hunger by 20. No buff. It's a simple loaf
     of bread.
   foodType: 1

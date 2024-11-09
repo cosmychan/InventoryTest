@@ -15,4 +15,6 @@ MonoBehaviour:
   itemName: Key
   itemPrefac: {fileID: 2773060694191407776, guid: d799340050650994da7f065f6cbc363b,
     type: 3}
+  itemImage: {fileID: 0}
+  isStackable: 0
   itemDescription: Used to open things.
