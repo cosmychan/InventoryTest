@@ -17,6 +17,7 @@ public class WeaponEditor : Editor
         weapon.itemImage = (Sprite)EditorGUILayout.ObjectField(weapon.itemImage, typeof(Sprite),
            false, GUILayout.Height(EditorGUIUtility.singleLineHeight));
         weapon.isStackable = EditorGUILayout.Toggle("Is Stackable", weapon.isStackable);
+        weapon.maxStack = EditorGUILayout.IntField("Max Stack", weapon.maxStack);
         weapon.itemDescription = EditorGUILayout.TextArea(weapon.itemDescription);
 
 

@@ -7,41 +7,41 @@ using UnityEngine;
 
 public class Interactor : MonoBehaviour
 {
-    [SerializeField] private float interactionRange = 3f; // Range within which the player can interact
-    private Camera mainCamera;
+    [SerializeField] private Transform _interactionPoint;
+    [SerializeField] private float _interactionPointRadius = 0.5f;
+    [SerializeField] private LayerMask _interactableMask;
 
-    private void Start()
-    {
-        mainCamera = Camera.main;
-    }
+    private readonly Collider[] _colliders = new Collider[3];
+    [SerializeField] private int _numFound;
 
     private void Update()
     {
-        DetectInteractable(); //check for interaction
-    }
+        _numFound = Physics.OverlapSphereNonAlloc(_interactionPoint.position, _interactionPointRadius,
+            _colliders, _interactableMask);
 
-    private void DetectInteractable()
-    {
-        // ray from the camera to detect objects within interaction range
-        Ray ray = new Ray(mainCamera.transform.position, mainCamera.transform.forward);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, interactionRange))
+        if (_numFound > 0)
         {
-            // check if the object has an Interactable component
-            Interactable interactable = hit.collider.GetComponent<Interactable>();
-            if (interactable != null)
-            {
-                UIManager.OnInteractionTextToggled?.Invoke(true); //turn on the interaction text panel
+            var interactable = _colliders[0].GetComponent<IInteractable>();
 
-                // we check if player presses the interaction key
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    interactable.Interact(); // interaction
-                    UIManager.OnInteractionTextToggled?.Invoke(false); // hide the interaction text panel
-                }
-                return;
+            UIManager.OnInteractionTextToggled?.Invoke(true); //turn on the interaction text panel
+
+            //if there is something to interact with and the player pressed the button for it - interact
+            if (interactable != null && Input.GetButtonDown("Submit"))
+            {
+                interactable.Interact(this);
             }
         }
+        else
+        {
+            UIManager.OnInteractionTextToggled?.Invoke(false); //turn off the interaction text panel
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        //for visual understanding of the interaction point
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(_interactionPoint.position, _interactionPointRadius);
+
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7200927917087392530}
   - component: {fileID: 7200927917085466067}
   - component: {fileID: 9121556242394093600}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Potion_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,4 +120,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63912d23227764d419ed712fb4937160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _prompt: 
   item: {fileID: 11400000, guid: bb7be81afe6c0cc4faa3e6844f59f8a6, type: 2}

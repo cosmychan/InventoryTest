@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 // depending on the slot - we do addiotional checks for droppoing items from inventory or assigning specific items to specific slots
 // example weapon to the weapon slot or armor of a certain type to the coresponding slot (head armor - to head armor slot)
 
-public class InventorySlot : MonoBehaviour, IDropHandler
+public class InventorySlot : MonoBehaviour, IDropHandler/*, IPointerClickHandler*/
 {
     public bool isBaseSlot; //if no additional check required
     public bool isThrowZone; //check if the zone is for throwing out of the inventory
@@ -23,6 +23,10 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         if (isThrowZone)
         {
             //throw item from inventory
+            _dropped = eventData.pointerDrag; //get the dropped object
+            ItemInfoDisplay item = _dropped.GetComponent<ItemInfoDisplay>(); //get the ItemDisplayInfo script from the object
+            GameObject.Instantiate(item.item.itemPrefac, GameObject.FindWithTag("Player").transform.position, GameObject.FindWithTag("Player").transform.rotation); //instantiate object prefab in scene
+            Destroy(_dropped);
         } else
         {
             if (isBaseSlot)
@@ -43,6 +47,17 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         }
     }
 
+    //public void OnPointerClick(PointerEventData eventData)
+    //{
+    //    Debug.LogError("entered");
+    //    if (eventData.button == PointerEventData.InputButton.Right)
+    //    {
+    //        GameObject _pressed = eventData.pointerClick; //get the object on which pressed/clicked
+    //        ItemInfoDisplay item = _pressed.GetComponent<ItemInfoDisplay>(); //get the ItemDisplayInfo script from the object
+    //        item.CheckItemInfo(item.item);
+    //    }
+    //}
+
     public void CheckItemType()
     {
         if (itemType == ItemType.NonConsumable)
@@ -52,7 +67,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
 
             if (notArmor)
             {
-                //get data from draggable item to check if the items corresponds to the slot
+                //get data from draggable item to check if the items corresponds to the weapon slot
                 
             }
             else

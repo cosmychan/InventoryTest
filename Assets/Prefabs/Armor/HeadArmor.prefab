@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3664500921839988139}
   - component: {fileID: 4581029283377896785}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: HeadArmor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

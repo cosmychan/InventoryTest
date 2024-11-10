@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7165734672891298483}
   - component: {fileID: 6581040906958104639}
   - component: {fileID: 8357134704253404519}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Potato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,4 +119,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63912d23227764d419ed712fb4937160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _prompt: 
   item: {fileID: 11400000, guid: d9fef8d0e7e895f4c93615f433511898, type: 2}

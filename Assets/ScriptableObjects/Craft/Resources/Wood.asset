@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Wood
   m_EditorClassIdentifier: 
   itemName: Wood
-  itemPrefac: {fileID: 0}
-  itemImage: {fileID: 0}
+  itemPrefac: {fileID: 6015801904299255468, guid: 3749b76f43b6f214f8b7c9f88c6ba504,
+    type: 3}
+  itemImage: {fileID: 21300000, guid: 0c6a2a64ca9f9c946a7dbbd1674cf5bd, type: 3}
   isStackable: 1
+  maxStack: 30
   itemDescription: Wood. Usefull for craft.
   resourceType: 0
   plantType: 0

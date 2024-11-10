@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Small Health Potion
   m_EditorClassIdentifier: 
   itemName: Small Health Potion
-  itemPrefac: {fileID: 0}
-  itemImage: {fileID: 0}
+  itemPrefac: {fileID: 7516147023265018176, guid: 9122802f90381f84d8b8a93daaf9717a,
+    type: 3}
+  itemImage: {fileID: 21300000, guid: 0c6a2a64ca9f9c946a7dbbd1674cf5bd, type: 3}
   isStackable: 1
+  maxStack: 5
   itemDescription: A potion that restores a small amount of heath (+25)
   potionType: 0
   restoreAmount: 25

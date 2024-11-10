@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Soup
   m_EditorClassIdentifier: 
   itemName: Chicken Soup
-  itemPrefac: {fileID: 0}
-  itemImage: {fileID: 0}
+  itemPrefac: {fileID: 8543187412641925830, guid: 9635f07bd7be9e44b89ea08e54684f8e,
+    type: 3}
+  itemImage: {fileID: 21300002, guid: 34ecf51bcd3f4424eafda7dafd885bd0, type: 3}
   isStackable: 1
+  maxStack: 10
   itemDescription: A delicious chicken soup. Covers hunger by 25. Gives a mana buff
     by 20.
   foodType: 1

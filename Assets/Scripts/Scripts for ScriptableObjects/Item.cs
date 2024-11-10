@@ -14,6 +14,7 @@ public class Item : ScriptableObject
     public GameObject itemPrefac; //the item's prefab to show in inventory
     public Sprite itemImage; //the image that will be shown in the inventory
     public bool isStackable; //if the item can be stacked
+    public int maxStack; //if the item can be stacked
     [TextArea] public string itemDescription; //description to show in inventory
 
     //[Header("Item Type")]

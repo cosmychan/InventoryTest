@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6932531947292164495}
   - component: {fileID: 3388453201600283692}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: PlateSet1_Boots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8868865244269591249}
   - component: {fileID: 5512672558510811992}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: PlateSet1_Pants
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8343687310717337427}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: LegArmor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

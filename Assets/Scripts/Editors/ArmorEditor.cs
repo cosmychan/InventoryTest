@@ -17,6 +17,7 @@ public class ArmorEditor : Editor
         armor.itemImage = (Sprite)EditorGUILayout.ObjectField(armor.itemImage, typeof(Sprite),
             false, GUILayout.Height(EditorGUIUtility.singleLineHeight));
         armor.isStackable = EditorGUILayout.Toggle("Is Stackable", armor.isStackable);
+        armor.maxStack = EditorGUILayout.IntField("Max Stack", armor.maxStack);
         armor.itemDescription = EditorGUILayout.TextArea(armor.itemDescription);
 
 

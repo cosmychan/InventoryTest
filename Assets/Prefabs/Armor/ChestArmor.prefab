@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4464320695125713270}
   - component: {fileID: 6104342215947400688}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: PlateSet1_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8261140013844442635}
   - component: {fileID: 5196611127769090100}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: PlateSet1_Shoulders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,7 +292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2605064397920373639}
   - component: {fileID: 6403153136401382751}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: PlateSet1_Gloves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,7 +432,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2592693794695880191}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: ChestArmor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

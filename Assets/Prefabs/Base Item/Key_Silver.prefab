@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2457273537971115542}
   - component: {fileID: 2457273537969178841}
   - component: {fileID: 6984535680234066231}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Key_Silver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,4 +119,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63912d23227764d419ed712fb4937160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _prompt: 
   item: {fileID: 11400000, guid: 5c658fa7ce17a344ba4597ba614339db, type: 2}

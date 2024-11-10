@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7894673532774509331}
   - component: {fileID: 6172961393258283423}
   - component: {fileID: 8603695906547014901}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bowl_Full
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63912d23227764d419ed712fb4937160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _prompt: 
   item: {fileID: 11400000, guid: eefb0abb301b5a7489234cbe742ef8f2, type: 2}
 --- !u!1001 &1793031100328757235
 PrefabInstance:
@@ -134,6 +135,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Meat
+      objectReference: {fileID: 0}
+    - target: {fileID: 7336216937811258066, guid: 112215925bb5334408b09b15b0f2d939,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7963677795723374696, guid: 112215925bb5334408b09b15b0f2d939,
         type: 3}

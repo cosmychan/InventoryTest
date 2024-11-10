@@ -6,46 +6,61 @@ using UnityEngine.UI;
 public class ItemInfoDisplay : MonoBehaviour
 {
     public Item item; //the item in/for slot/inventory
-    public Image itemImage; //the item in/for slot/inventory
-
-    private void Start()
-    {
-        itemImage = GetComponent<Image>();
-    }
+    public int itemCount = 1; //the amount of the item
+    public Text counterText;
+    public bool isConsumable;
 
     public void SendItemInfo()
     {
-        UIManager.OnItemInfoUpdated(item.itemName, item.itemDescription);
+        UIManager.OnItemInfoUpdated(item.itemName, item.itemDescription); //for UI to display the name and description when mouse over item
     }
 
     public void EmptyItemInfo()
     {
-        UIManager.OnItemInfoUpdated("", "");
+        UIManager.OnItemInfoUpdated("", ""); //clear text after mouse no longer on item
     }
 
     public void InitialiseItem(Item newItem)
     {
-        item = newItem;
-        itemImage.sprite = newItem.itemImage;
+        //is used to show image of item in slot
+        item = newItem; //assign item
+        gameObject.GetComponent<Image>().overrideSprite = newItem.itemImage; //assign image/sprite from scribtable object
+        RefreshCountText();
     }
 
-    public void DisplayItemInfo(Item item)
+    public void RefreshCountText()
     {
-        // Display the common fields for all items
-        Debug.Log("Item Name: " + item.itemName);
-        Debug.Log("Description: " + item.itemDescription);
+        counterText.text = itemCount.ToString();
+        if (itemCount > 1)
+        {
+            counterText.gameObject.SetActive(true);
+        }
+        else
+        {
+            counterText.gameObject.SetActive(false);
+        }
+    }
 
+    public void CheckItemInfo(Item item)
+    {
         switch (item)
         {
             case Food food:
+                PlayerStats.OnEat?.Invoke(food);
+                Inventorymanager.OnMinusItem?.Invoke(item);
                 break;
             case Potion potion:
+                PlayerStats.OnUsePotion?.Invoke(potion);
+                Inventorymanager.OnMinusItem?.Invoke(item);
                 break;
             case Resources resource:
+                isConsumable = false;
                 break;
             case Armor armor:
+                isConsumable = false;
                 break;
             case Weapon weapon:
+                isConsumable = false;
                 break;
         }
     }

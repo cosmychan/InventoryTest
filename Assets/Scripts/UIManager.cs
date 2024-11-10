@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _itemDescriptionText;
     [SerializeField] private GameObject _interaction;
     [SerializeField] private GameObject _deathScreen;
+    [SerializeField] private GameObject _inventoryPanel;
+    [SerializeField] private GameObject _playerStats;
 
     public static Action<int> OnHealthChanged;
     public static Action<int> OnManaChanged;
@@ -23,6 +25,7 @@ public class UIManager : MonoBehaviour
     public static Action<string, string> OnItemInfoUpdated;
     public static Action<bool> OnInteractionTextToggled;
     public static Action<bool> OnDeath;
+    public static Action<bool> OnInventoryToggle;
 
     public void Awake()
     {
@@ -39,6 +42,7 @@ public class UIManager : MonoBehaviour
         OnItemInfoUpdated += SetItemInfo;
         OnInteractionTextToggled += ToggleInteractionText;
         OnDeath += ToggleDeathScreen;
+        OnInventoryToggle += ToggleInventory;
     }
 
     public void OnDisable()
@@ -50,6 +54,7 @@ public class UIManager : MonoBehaviour
         OnItemInfoUpdated -= SetItemInfo;
         OnInteractionTextToggled -= ToggleInteractionText;
         OnDeath -= ToggleDeathScreen;
+        OnInventoryToggle -= ToggleInventory;
     }
 
     public void UpdateHealth(int healthValue)
@@ -87,6 +92,12 @@ public class UIManager : MonoBehaviour
     {
         //turn on/off the interaction panel
         _deathScreen.SetActive(isActive);
-        Time.timeScale = 0f;
+    }
+
+    public void ToggleInventory(bool isActive)
+    {
+        //turn on/off the interaction panel
+        _inventoryPanel.SetActive(isActive);
+        _playerStats.SetActive(!isActive);
     }
 }

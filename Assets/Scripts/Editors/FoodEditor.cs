@@ -17,6 +17,7 @@ public class FoodEditor : Editor
         food.itemImage = (Sprite)EditorGUILayout.ObjectField(food.itemImage, typeof(Sprite),
            false, GUILayout.Height(EditorGUIUtility.singleLineHeight));
         food.isStackable = EditorGUILayout.Toggle("Is Stackable", food.isStackable);
+        food.maxStack = EditorGUILayout.IntField("Max Stack", food.maxStack);
         food.itemDescription = EditorGUILayout.TextArea(food.itemDescription);
 
 

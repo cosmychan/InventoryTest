@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Carrot
   m_EditorClassIdentifier: 
   itemName: Carrot
-  itemPrefac: {fileID: 919132149155446097, guid: fa1dbf3ce607faa4eaf5d6c71e9ccc66,
+  itemPrefac: {fileID: 6006247403153440517, guid: 50122eae508ed204a84b2c81f0b4282b,
     type: 3}
   itemImage: {fileID: 21300038, guid: 34ecf51bcd3f4424eafda7dafd885bd0, type: 3}
   isStackable: 1
+  maxStack: 20
   itemDescription: A carrot. Used for cooking. If eaten cover hunger by 10.
   foodType: 0
   fullAmount: 10

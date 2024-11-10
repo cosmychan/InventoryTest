@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4601402560071702403}
   - component: {fileID: 4601402560069699904}
   - component: {fileID: 1149483513596646965}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ivy_Branch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,4 +119,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63912d23227764d419ed712fb4937160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _prompt: 
   item: {fileID: 11400000, guid: 867f0e4990e39fd4694447bafa4b5eff, type: 2}

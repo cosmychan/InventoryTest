@@ -7,7 +7,7 @@ using UnityEngine.UI;
 //we use this class to drag and drop items across the inventory slots
 
 
-public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     public Image image; //the image of the item object
     public Transform parentAfterDrag; //this holds the info related to the object parent
@@ -34,4 +34,14 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         image.raycastTarget = true; //turn back on so it's possible to interact wih the item again
     }
 
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.LogError("entered");
+        if (eventData.button == PointerEventData.InputButton.Right)
+        {
+            GameObject _pressed = eventData.pointerClick; //get the object on which pressed/clicked
+            ItemInfoDisplay item = _pressed.GetComponent<ItemInfoDisplay>(); //get the ItemDisplayInfo script from the object
+            item.CheckItemInfo(item.item);
+        }
+    }
 }

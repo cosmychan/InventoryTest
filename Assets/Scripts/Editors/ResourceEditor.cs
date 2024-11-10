@@ -17,6 +17,7 @@ public class ResourceEditor : Editor
         resource.itemImage = (Sprite)EditorGUILayout.ObjectField(resource.itemImage, typeof(Sprite),
            false, GUILayout.Height(EditorGUIUtility.singleLineHeight));
         resource.isStackable = EditorGUILayout.Toggle("Is Stackable", resource.isStackable);
+        resource.maxStack = EditorGUILayout.IntField("Max Stack", resource.maxStack);
         resource.itemDescription = EditorGUILayout.TextArea(resource.itemDescription);
 
 
