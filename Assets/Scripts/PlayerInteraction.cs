@@ -14,7 +14,7 @@ public class PlayerInteraction : MonoBehaviour
         } else if (Input.GetButtonDown("Back"))
         {
             UIManager.OnInventoryToggle?.Invoke(false);
-            Time.timeScale = 0f;
+            Time.timeScale = 1f;
         }
     }
 }

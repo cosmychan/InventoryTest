@@ -76,6 +76,7 @@ public class Inventorymanager : MonoBehaviour
                 //if item already in slot - reduce stack
                 itemInSlot.itemCount--;
                 itemInSlot.RefreshCountText();
+                return;
             }
         }
 
@@ -84,11 +85,12 @@ public class Inventorymanager : MonoBehaviour
         {
             InventorySlot slot = inventorySlots[i];
             ItemInfoDisplay itemInSlot = slot.GetComponentInChildren<ItemInfoDisplay>();
-            //if (itemInSlot.itemCount == 1)
-            //{
+            if (itemInSlot.item == item)
+            {
                 //if no item in slot - add item
                 Destroy(itemInSlot.gameObject);
-            //}
+            return;
+            }
         }
     }
 
