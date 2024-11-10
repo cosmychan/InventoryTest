@@ -6,15 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
     path: Assets/Scenes/Dungeon_Demo.unity
     guid: b94ee59f12f411f488e6df197429e012
-  - enabled: 1
-    path: Assets/Polytope Studio/Lowpoly_Demos/Armors_Free_Pack/Armors_Free_Demo.unity
-    guid: d4982469e0cfeb2438e72c6129a8d819
-  - enabled: 1
-    path: Assets/EasyStart Third Person Controller/Demo.unity
-    guid: b547c30cf02f9704f894481353d43e5a
   m_configObjects: {}
