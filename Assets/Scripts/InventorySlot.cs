@@ -26,7 +26,16 @@ public class InventorySlot : MonoBehaviour, IDropHandler/*, IPointerClickHandler
             _dropped = eventData.pointerDrag; //get the dropped object
             ItemInfoDisplay item = _dropped.GetComponent<ItemInfoDisplay>(); //get the ItemDisplayInfo script from the object
             GameObject.Instantiate(item.item.itemPrefac, GameObject.FindWithTag("Player").transform.position, GameObject.FindWithTag("Player").transform.rotation); //instantiate object prefab in scene
-            Destroy(_dropped);
+            if (item.item.isStackable && item.itemCount < item.item.maxStack && item.itemCount > 1)
+            {
+                item.itemCount--;
+                item.RefreshCountText();
+            }
+            else
+            {
+                Destroy(_dropped.gameObject);
+            }
+            
         } else
         {
             if (isBaseSlot)
@@ -41,24 +50,14 @@ public class InventorySlot : MonoBehaviour, IDropHandler/*, IPointerClickHandler
             else
             {
                 _dropped = eventData.pointerDrag; //get the dropped object
-                CheckItemType();
+                ItemInfoDisplay item = _dropped.GetComponent<ItemInfoDisplay>(); //get the dragable script from the object
+                CheckItemType(item.item, item);
             }
             
         }
     }
 
-    //public void OnPointerClick(PointerEventData eventData)
-    //{
-    //    Debug.LogError("entered");
-    //    if (eventData.button == PointerEventData.InputButton.Right)
-    //    {
-    //        GameObject _pressed = eventData.pointerClick; //get the object on which pressed/clicked
-    //        ItemInfoDisplay item = _pressed.GetComponent<ItemInfoDisplay>(); //get the ItemDisplayInfo script from the object
-    //        item.CheckItemInfo(item.item);
-    //    }
-    //}
-
-    public void CheckItemType()
+    public void CheckItemType(Item item, ItemInfoDisplay itemInfo)
     {
         if (itemType == ItemType.NonConsumable)
         {
@@ -69,20 +68,34 @@ public class InventorySlot : MonoBehaviour, IDropHandler/*, IPointerClickHandler
             {
                 //get data from draggable item to check if the items corresponds to the weapon slot
                 
+                if (item  is Weapon)
+                {
+                    dragable.parentAfterDrag = transform; //set new parent
+                }                
             }
             else
             {
-                switch (armorType)
+                Armor armorItem = item as Armor;
+                if (armorItem.armorType == armorType)
                 {
-                    case ArmorType.Head:
-                        //get data from draggable item to check if the items corresponds to the slot
-                        break;
-                    case ArmorType.Chest:
-                        //get data from draggable item to check if the items corresponds to the slot
-                        break;
-                    case ArmorType.Legs:
-                        //get data from draggable item to check if the items corresponds to the slot
-                        break;
+                    switch (armorType)
+                    {
+                        case ArmorType.Head:
+                            //get data from draggable item to check if the items corresponds to the slot
+                            dragable.parentAfterDrag = transform; //set new parent
+                            itemInfo.CheckItemInfo();
+                            break;
+                        case ArmorType.Chest:
+                            //get data from draggable item to check if the items corresponds to the slot
+                            dragable.parentAfterDrag = transform; //set new parent
+                            itemInfo.CheckItemInfo();
+                            break;
+                        case ArmorType.Legs:
+                            //get data from draggable item to check if the items corresponds to the slot
+                            dragable.parentAfterDrag = transform; //set new parent
+                            itemInfo.CheckItemInfo();
+                            break;
+                    }
                 }
             }
         }

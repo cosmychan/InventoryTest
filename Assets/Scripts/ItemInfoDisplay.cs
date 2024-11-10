@@ -41,26 +41,28 @@ public class ItemInfoDisplay : MonoBehaviour
         }
     }
 
-    public void CheckItemInfo(Item item)
+    //we check the item info type/class for use. Eat food, use potion, equip, etc.
+    public void CheckItemInfo()
     {
         switch (item)
         {
             case Food food:
-                PlayerStats.OnEat?.Invoke(food);
+                PlayerStats.OnEat?.Invoke(food); //eat food
                 Inventorymanager.OnMinusItem?.Invoke(item);
                 break;
             case Potion potion:
-                PlayerStats.OnUsePotion?.Invoke(potion);
+                PlayerStats.OnUsePotion?.Invoke(potion); //use potion
                 Inventorymanager.OnMinusItem?.Invoke(item);
                 break;
             case Resources resource:
-                isConsumable = false;
+                Debug.LogError("resource"); //here we can implement the craft mecanic
                 break;
             case Armor armor:
-                isConsumable = false;
+                EquipManager.OnEquipItem?.Invoke(item, armor.armorType.ToString());
+                //PlayerStats.OnEquipItem?.Inv
                 break;
             case Weapon weapon:
-                isConsumable = false;
+                EquipManager.OnEquipItem?.Invoke(item, "Weapon"); //we can write it similar to Armor case later
                 break;
         }
     }

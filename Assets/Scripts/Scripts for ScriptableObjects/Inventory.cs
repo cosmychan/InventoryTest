@@ -3,6 +3,7 @@ using UnityEngine;
 
 //we use this to store our inventory items and their quantity
 //it also contains the InventorySlot class which is used for storing items in one list (easier to access them later)
+//this one will help with the save/load of the inventory in gameplay
 
 [CreateAssetMenu(fileName = "NewInventory", menuName = "Inventory/BaseInventory", order = 1)]
 public class Inventory : ScriptableObject

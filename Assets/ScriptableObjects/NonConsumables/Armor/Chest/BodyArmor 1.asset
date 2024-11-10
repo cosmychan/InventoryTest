@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26b4608ebe68e5b4b9ea3ed0c9b2402d, type: 3}
+  m_Name: BodyArmor 1
+  m_EditorClassIdentifier: 
+  itemName: Body Armor
+  itemPrefac: {fileID: 2428002720362940255, guid: 32c1f5092a6197a479661ad5204d7a0a,
+    type: 3}
+  itemImage: {fileID: 21300000, guid: 5a3227568ca26e047a78f45b1357d306, type: 3}
+  isStackable: 0
+  maxStack: 0
+  itemDescription: A classic body armor.
+  armorType: 1
+  shieldAmount: 5
+  useArmorDurability: 0
+  armorDurability: 0

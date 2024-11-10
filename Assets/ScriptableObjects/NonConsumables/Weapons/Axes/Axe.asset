@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Axe
   itemPrefac: {fileID: 2364736775823328542, guid: 992bb947a6df6634487686c2fe6330bc,
     type: 3}
-  itemImage: {fileID: 21300000, guid: 0c6a2a64ca9f9c946a7dbbd1674cf5bd, type: 3}
+  itemImage: {fileID: 21300000, guid: ae36dcb818ce12a4e9815358dda5672d, type: 3}
   isStackable: 0
   maxStack: 0
   itemDescription: A small axe.

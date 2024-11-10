@@ -41,7 +41,7 @@ public class DragableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         {
             GameObject _pressed = eventData.pointerClick; //get the object on which pressed/clicked
             ItemInfoDisplay item = _pressed.GetComponent<ItemInfoDisplay>(); //get the ItemDisplayInfo script from the object
-            item.CheckItemInfo(item.item);
+            item.CheckItemInfo();
         }
     }
 }

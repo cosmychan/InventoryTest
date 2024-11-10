@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Staff
   itemPrefac: {fileID: 5875270693028758024, guid: 3058356566addd04d8ab52928169b5e2,
     type: 3}
-  itemImage: {fileID: 21300000, guid: 0c6a2a64ca9f9c946a7dbbd1674cf5bd, type: 3}
+  itemImage: {fileID: 21300000, guid: c1f85355e545b8f45b14843085b0725a, type: 3}
   isStackable: 0
   maxStack: 0
   itemDescription: Used to spell low level magic. But you don't know how to use magic

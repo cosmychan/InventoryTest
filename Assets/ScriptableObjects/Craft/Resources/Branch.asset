@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Branch
   itemPrefac: {fileID: 8707025466778927745, guid: bbd85e700f0f23546bfd0547bf83ad02,
     type: 3}
-  itemImage: {fileID: 21300000, guid: 0c6a2a64ca9f9c946a7dbbd1674cf5bd, type: 3}
+  itemImage: {fileID: 21300000, guid: a97fdb50f419ce24194f924c19e85ca7, type: 3}
   isStackable: 1
   maxStack: 30
   itemDescription: Used for crafting.

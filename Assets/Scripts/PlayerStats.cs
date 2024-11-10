@@ -150,4 +150,30 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    //here we can equip weapon and send info to the animator and other combat related classes about the weapon equipped
+    //but for now we will just take the damage value as a debug and check the current spawned weapon item for equip
+    public void EquipWeapon(Weapon weapon)
+    {
+        Debug.LogError("Damage " + weapon.weaponDamage);
+
+
+
+        
+        //we will leave this for future use
+        //switch (weapon.weaponType)
+        //{
+        //    case WeaponType.Axe:
+
+        //        break;
+        //    case WeaponType.Bow:
+
+        //        break;
+        //    case WeaponType.Staff:
+
+        //        break;
+        //    case WeaponType.Sword:
+
+        //        break;
+        //}
+    }
 }

@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Bone
   itemPrefac: {fileID: 8387812288189420140, guid: a13b8883072533940b5bcfde3cbc03a0,
     type: 3}
-  itemImage: {fileID: 21300000, guid: 0c6a2a64ca9f9c946a7dbbd1674cf5bd, type: 3}
+  itemImage: {fileID: 21300000, guid: 9271002208e6c0f4a90ee09c8158b937, type: 3}
   isStackable: 1
   maxStack: 30
   itemDescription: Bones. Usefull resource for crafting

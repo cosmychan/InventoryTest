@@ -8,7 +8,6 @@ public class Inventorymanager : MonoBehaviour
     public InventorySlot[] inventorySlots;
     public GameObject inventoryPrefab;
     public bool isAdded;
-    public int selectedSlot = -1;
 
     public static Func<Item, bool> OnAddItem;
     public static Action<Item> OnMinusItem;
@@ -61,6 +60,7 @@ public class Inventorymanager : MonoBehaviour
         return false;
     }
 
+    //use this when we want to use item from inventory
     public void MinusItem(Item item)
     {
         //used to find a slot with the same item type and count lower then the maximum number
@@ -87,9 +87,9 @@ public class Inventorymanager : MonoBehaviour
             ItemInfoDisplay itemInSlot = slot.GetComponentInChildren<ItemInfoDisplay>();
             if (itemInSlot.item == item)
             {
-                //if no item in slot - add item
+                //if item not stackable - destroy it
                 Destroy(itemInSlot.gameObject);
-            return;
+                return;
             }
         }
     }
@@ -102,10 +102,4 @@ public class Inventorymanager : MonoBehaviour
         inventoryItem.InitialiseItem(item); //we assign the item that is needed to be setted
     }
 
-    //if we want a slot selection by input other then mouse, we can implement it here
-    // for now just changes values based in mouse input and slot
-    public void ChangeSelectedSlot(int value)
-    {
-        selectedSlot = value;
-    }
 }

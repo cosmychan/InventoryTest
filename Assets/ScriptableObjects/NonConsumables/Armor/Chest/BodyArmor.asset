@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: BodyArmor
   m_EditorClassIdentifier: 
   itemName: Body Armor
-  itemPrefac: {fileID: 2773060694191407776, guid: d799340050650994da7f065f6cbc363b,
+  itemPrefac: {fileID: 8401391612915286635, guid: 54904bde03fb3fb4b98c93cdc7edf26f,
     type: 3}
-  itemImage: {fileID: 21300000, guid: 0c6a2a64ca9f9c946a7dbbd1674cf5bd, type: 3}
+  itemImage: {fileID: 21300000, guid: 5a3227568ca26e047a78f45b1357d306, type: 3}
   isStackable: 0
+  maxStack: 0
   itemDescription: A classic body armor.
   armorType: 1
   shieldAmount: 5
